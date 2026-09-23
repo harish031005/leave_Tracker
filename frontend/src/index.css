@@ -1,0 +1,121 @@
+/* Import Google Fonts: Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===================================================================
+   Base Styles & CSS Custom Properties
+   =================================================================== */
+@layer base {
+  :root {
+    --color-bg: #FAF9F6;
+    --color-surface: #FFFFFF;
+    --color-text: #1E293B;
+    --color-text-secondary: #64748B;
+    --color-border: #E2E8F0;
+  }
+
+  .dark {
+    --color-bg: #0F172A;
+    --color-surface: #1E293B;
+    --color-text: #F1F5F9;
+    --color-text-secondary: #94A3B8;
+    --color-border: #334155;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Smooth scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-light rounded-full;
+  }
+}
+
+/* ===================================================================
+   Component Styles (reusable across the app)
+   =================================================================== */
+@layer components {
+  /* Card — the main container component */
+  .card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    @apply rounded-2xl p-6 shadow-soft transition-all duration-300;
+  }
+  .card:hover {
+    @apply shadow-soft-lg;
+  }
+
+  /* Status badges */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide;
+  }
+  .badge-pending {
+    @apply bg-amber/10 text-amber-dark;
+  }
+  .badge-approved {
+    @apply bg-emerald/10 text-emerald-dark;
+  }
+  .badge-rejected {
+    @apply bg-rose/10 text-rose-dark;
+  }
+  .badge-cancelled {
+    @apply bg-slate/10 text-slate;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-semibold text-sm
+           transition-all duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  .btn-primary {
+    @apply btn bg-indigo text-white hover:bg-indigo-dark focus:ring-indigo
+           shadow-md hover:shadow-lg active:scale-[0.98];
+  }
+  .btn-success {
+    @apply btn bg-emerald text-white hover:bg-emerald-dark focus:ring-emerald;
+  }
+  .btn-danger {
+    @apply btn bg-rose text-white hover:bg-rose-dark focus:ring-rose;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent hover:bg-slate-100 dark:hover:bg-slate-800
+           text-slate-dark dark:text-slate-light;
+  }
+
+  /* Form inputs */
+  .input {
+    @apply w-full px-4 py-3 rounded-xl border text-sm
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-indigo/30 focus:border-indigo;
+    background-color: var(--color-surface);
+    border-color: var(--color-border);
+    color: var(--color-text);
+  }
+  .input::placeholder {
+    color: var(--color-text-secondary);
+  }
+}
+
+/* ===================================================================
+   Utility Overrides
+   =================================================================== */
+@layer utilities {
+  .text-primary { color: var(--color-text); }
+  .text-secondary { color: var(--color-text-secondary); }
+  .bg-page { background-color: var(--color-bg); }
+  .bg-surface { background-color: var(--color-surface); }
+  .border-default { border-color: var(--color-border); }
+}

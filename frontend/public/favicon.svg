@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <defs>
+    <linearGradient id="ltGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="50%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#3730A3"/>
+    </linearGradient>
+    <linearGradient id="emeraldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <!-- Squircle Background -->
+  <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#ltGradient)"/>
+  <circle cx="50" cy="14" r="12" fill="#34D399" fill-opacity="0.25" filter="blur(4px)"/>
+  
+  <!-- Calendar Base Frame -->
+  <rect x="14" y="16" width="36" height="34" rx="8" stroke="#FFFFFF" stroke-opacity="0.8" stroke-width="3" fill="#FFFFFF" fill-opacity="0.08"/>
+  <line x1="14" y1="26" x2="50" y2="26" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="2.5"/>
+  <circle cx="24" cy="13" r="2.5" fill="#FFFFFF"/>
+  <circle cx="40" cy="13" r="2.5" fill="#FFFFFF"/>
+  
+  <!-- Emerald Approval Checkmark/Leaf -->
+  <path d="M22 37L30 44L44 28" stroke="url(#emeraldGradient)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
